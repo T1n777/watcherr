@@ -50,7 +50,7 @@ flowchart TD
 
 ## Requirements
 
-- Python 3.8 or newer
+- Python 3.10 or newer
 - qBittorrent 4.x / 5.x with WebUI enabled
 - Sonarr v3 or v4 (API v3 enabled)
 - Radarr v3, v4, or v5 (API v3 enabled)
