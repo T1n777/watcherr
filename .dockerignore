@@ -1,0 +1,8 @@
+.git
+.gitignore
+.dockerignore
+*.md
+LICENSE
+watcherr.service
+docker-compose.yml
+__pycache__/

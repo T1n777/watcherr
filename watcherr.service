@@ -1,0 +1,34 @@
+[Unit]
+Description=Watcherr - Automated Stalled Torrent Auto-Healing & Indexer Failover Daemon
+Documentation=https://github.com/T1n777/watcherr
+After=network.target qbittorrent-nox.service sonarr.service radarr.service
+Wants=qbittorrent-nox.service
+
+[Service]
+Type=simple
+User=tinapple
+Group=users
+WorkingDirectory=/tmp
+ExecStart=/usr/local/bin/watcherr
+Restart=always
+RestartSec=10
+TimeoutStopSec=15
+
+# Environment Configuration (Optional overrides)
+# Environment=QBIT_URL=http://127.0.0.1:8080
+# Environment=SONARR_URL=http://127.0.0.1:8989
+# Environment=RADARR_URL=http://127.0.0.1:7878
+# Environment=SONARR_API_KEY=
+# Environment=RADARR_API_KEY=
+# Environment=METADATA_STALL_SECONDS=180
+# Environment=ZERO_SEED_STALL_SECONDS=300
+# Environment=CHECK_INTERVAL_SECONDS=45
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=read-only
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

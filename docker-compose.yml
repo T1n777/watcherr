@@ -1,0 +1,17 @@
+services:
+  watcherr:
+    image: ghcr.io/t1n777/watcherr:latest
+    build: .
+    container_name: watcherr
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - QBIT_URL=http://127.0.0.1:8080
+      - SONARR_URL=http://127.0.0.1:8989
+      - RADARR_URL=http://127.0.0.1:7878
+      - SONARR_API_KEY=your_sonarr_api_key_here
+      - RADARR_API_KEY=your_radarr_api_key_here
+      - METADATA_STALL_SECONDS=180
+      - ZERO_SEED_STALL_SECONDS=300
+      - CHECK_INTERVAL_SECONDS=45
+      - DRY_RUN=false
